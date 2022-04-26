@@ -14,11 +14,28 @@
         ※アクセス解析は行なっていないのでIPアドレス等は取得していません。
         <br>アクセス数も端末情報も分かりません。
     </h4>
-    <form action="https://docs.google.com/forms/d/e/1FAIpQLSc3YC21yQIL9H7NZpI8ibBFOANAMDWkrayblsdZ762wIM0Tzw/viewform" method="post">
-        <p>お名前：<input type="text" name="entry.353722469" value="" required /></p>
+    <form action="https://docs.google.com/forms/d/e/1FAIpQLSc3YC21yQIL9H7NZpI8ibBFOANAMDWkrayblsdZ762wIM0Tzw/viewform" method="post" name="myForm" target="dummyIframe">
+        <div>
+            <label>
+                お名前：
+            </label>
+            <input type="text" name="entry.353722469" value="" required />
+        </div>
 
-        <p><input type="submit" name="submitBtn" value="送信"></p>
+        <div>
+            <input type="button" value="送信" onclick="sendGform()">
+        </div>
     </form>
+    <iframe name="dummyIframe" style="display:none;"></iframe>
+</div>
+<div id="thxMessage" style="display:none;">お問い合わせありがとうございました。</div>
+<script>
+function sendGform(){
+   document.myForm.submit();
+   document.getElementById('formWrapper').style.display = 'none';
+   document.getElementById('thxMessage').style.display = 'block';
+}
+</script>
 </body>
 
 </html>
