@@ -1,3 +1,4 @@
 # taion
 Demo
-https://tinnguruma.github.io/taion/
+[一ヶ月分]
+https://tinnguruma.github.io/taion/collectively
