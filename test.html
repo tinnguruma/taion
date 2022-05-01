@@ -16,8 +16,8 @@ window.addEventListener("load", function(){
 		// appendメソッドでキーとデータの組をセットする
 		// append("キー(FORMで云うところのname属性値)",  "データ")でデータをセットできる
 		// appendではデータは追加となる
-		mixedDatas.append("filename",  "test.txt");
-		mixedDatas.append("filesize",  "10,154B");
+		//mixedDatas.append("filename",  "test.txt");
+		//mixedDatas.append("filesize",  "10,154B");
 
 		// XHRの宣言
 		var XHR = new XMLHttpRequest();
@@ -46,14 +46,7 @@ window.addEventListener("load", function(){
     <label for="item1">名前</label>
     <input name="entry.353722469" id="item1">
   </p>
-  <p>
-    <label for="item2">年齢</label>
-    <input name="entry.353722469" id="item2">
-  </p>
-  <p>
-    <label for="item3">住所</label>
-    <input name="entry.353722469" id="item3">
-  </p>
+
 </form>
 <p>
   <button type="button" id="send_mixdata">入力値と固定値を送信する</button>
