@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>体温[デモ]2</title>
+  <script>
+    const form = document.getElementById("form")
+const submitButton = document.getElementById("submit-button")
+
+submitButton.onclick = () => {
+  const formData = new FormData(form)
+  const action = form.getAttribute("action")
+  const options = {
+    method: 'POST',
+    body: formData,
+  }
+  fetch(action, options).then((e) => {
+    if(e.status === 200) {
+      alert("保存しました。")
+      return
+    }
+    alert("保存できませんでした。")
+  })
+}
+    
+    
+  </script>
+</head>
+<body>
+  
+  <form id="form" action="/example" method="post">
+  <input type="text" value="hoge" />
+  <button id="submit-button" type="button">送信</button>
+</form>
+  
+  <br>
+  <br>
+  <br>
+  <br>
+<br>
+    //<form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSc3YC21yQIL9H7NZpI8ibBFOANAMDWkrayblsdZ762wIM0Tzw/formResponse" method="post" onsubmit="doSomething();return false;">
+    //<div><label>お名前：</label><input type="text" name="entry.353722469" value="" required /></div>
+    //<p><input type="submit"value="送信"></p>   
+    //</form> 
+</body>
+</html>
