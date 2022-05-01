@@ -5,6 +5,12 @@
     <title>体温[デモ]2</title>
     
   <script type="text/javascript">
+	  var not = 0;
+function counter(){
+not++;
+document.getElementById("press-button").innerHTML = not;
+}
+
       
       // ページ読込完了後にボタンにclickイベントを登録する
 window.addEventListener("load", function(){
@@ -60,13 +66,7 @@ window.addEventListener("load", function(){
 <span id="press-button">0</span>回
 </p>
 	
-	<script type="text/javascript">
-		var not = 0;
-function counter(){
-not++;
-document.getElementById("press-button").innerHTML = not;
-}
-		</script>
+		
 	
 	
   <br>
