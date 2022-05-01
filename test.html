@@ -57,6 +57,40 @@ window.addEventListener("load", function(){
   
   <br>
   <br>
+	<div class="switchdsp">
+<label for="l-1">
+<span class="clicktxt">クリックして確認</span>
+</label>
+<input type="checkbox" id="l-1"><div class="dsp">
+<p>ここの要素が出てきます。</p>
+</div></div>
+	
+	<style type="text/css">
+		.clicktxt {
+color:#ffffff;
+background-color: #4169e1;
+padding:15px;
+border-radius: 10px;
+}
+
+.switchdsp input {
+display: none;
+}
+
+.switchdsp .dsp {
+padding: 0px 10px 0px 10px;
+height: 0;
+overflow: hidden;
+transition: 0.9s;
+opacity: 0;
+}
+
+.switchdsp input:checked ~ .dsp {
+padding: 0px 25px 0px 25px;
+height: auto;
+opacity: 1;
+}
+	</style>
   <br>
   <br>
 <br>
