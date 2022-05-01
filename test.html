@@ -6,11 +6,6 @@
     <title>体温[デモ]2</title>
 
     <script type="text/javascript">
-        var not = 0;
-        function counter() {
-            not++;
-            document.getElementById("press-button").innerHTML = not;
-        }
 
 
         // ページ読込完了後にボタンにclickイベントを登録する
@@ -57,7 +52,7 @@
 
     </form>
     <p>
-        <button type="button" id="send_mixdata" 　onclick="counter()">送信！！</button>
+        <button type="button" id="send_mixdata" onclick="a=parseInt(this.getAttribute('data-count'));a=isNaN(a)?1:a+1;alert(a+'回押しましたね');this.setAttribute('data-count',a)">送信！！</button>
     </p>
     <div id="mixdata_response">
         <!-- 結果を出力する -->
