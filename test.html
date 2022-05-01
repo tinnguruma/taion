@@ -49,13 +49,26 @@ window.addEventListener("load", function(){
 
 </form>
 <p>
-  <button type="button" id="send_mixdata"　style="width:200px;height:150px;">送信！！</button>
+  <button type="button" id="send_mixdata"　onclick="counter()">送信！！</button>
 </p>
 <div id="mixdata_response">
   <!-- 結果を出力する -->
 </div>
   
   <br>
+	<p>
+<span id="press-button">0</span>回
+</p>
+	
+	<script type="text/javascript">
+		var not = 0;
+function counter(){
+not++;
+document.getElementById("press-button").innerHTML = not;
+}
+		</script>
+	
+	
   <br>
   <br>
   <br>
