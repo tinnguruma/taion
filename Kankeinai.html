@@ -1,0 +1,159 @@
+<html><head>
+<title>GOES衛星</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="refresh" content="300;URL=goes.php">
+</head>
+<body bgcolor="ffffff">
+ 
+<form method="post" action="goes.php">
+<input type="hidden" name="now" value="1">
+<input type="hidden" name="c" value="xr">
+<table border="0" cellspacing="0">
+<tbody><tr>
+<td nowrap=""><font size="+1"><b>GOES X線</b></font>　<font size="-1">データ：NOAA/SWPC、作図：宇宙天気ニュース</font></td>
+<td width="30"></td>
+<td align="right" valign="top" rowspan="2"><a href="/"><img src="../fig/swnews_jp.png" border="0"></a></td>
+</tr>
+<tr><td colspan="2">
+<table border="0" cellspacing="0">
+<tbody><tr>
+<td width="">
+<select name="dh" onchange="submit()">
+<option value="1">1日
+</option><option value="3" selected="">3日
+</option><option value="7">7日
+</option></select>
+</td>
+<td width="15"></td>
+<td><input type="submit" value="X線" name="act"></td>
+<td><input type="submit" value="電子" name="act"></td>
+<td><input type="submit" value="陽子" name="act"></td>
+<td><input type="submit" value="磁場" name="act"></td>
+</tr>
+</tbody></table>
+</td></tr>
+<tr><td colspan="3">
+<table border="0" cellspacing="0">
+<tbody><tr>
+<td><input type="submit" value="-27d" name="act"></td>
+<td><input type="submit" value="-10d" name="act"></td>
+<td><input type="submit" value="-1day" name="act"></td>
+<td width="7"></td>
+<td><input type="submit" value="+1day" name="act"></td>
+<td><input type="submit" value="+10d" name="act"></td>
+<td><input type="submit" value="+27d" name="act"></td>
+<td width="15"></td>
+<td>
+<select name="y">
+<option>2011
+</option><option>2012
+</option><option>2013
+</option><option>2014
+</option><option>2015
+</option><option>2016
+</option><option>2017
+</option><option>2018
+</option><option>2019
+</option><option>2020
+</option><option>2021
+</option><option selected="">2022
+</option></select>
+</td>
+<td>/</td>
+<td>
+<select name="m">
+<option>1
+</option><option>2
+</option><option>3
+</option><option>4
+</option><option selected="">5
+</option><option>6
+</option><option>7
+</option><option>8
+</option><option>9
+</option><option>10
+</option><option>11
+</option><option>12
+</option></select>
+</td>
+<td>/</td>
+<td>
+<select name="d">
+<option>1
+</option><option>2
+</option><option>3
+</option><option>4
+</option><option>5
+</option><option>6
+</option><option>7
+</option><option>8
+</option><option>9
+</option><option>10
+</option><option>11
+</option><option>12
+</option><option>13
+</option><option>14
+</option><option>15
+</option><option>16
+</option><option>17
+</option><option selected="">18
+</option><option>19
+</option><option>20
+</option><option>21
+</option><option>22
+</option><option>23
+</option><option>24
+</option><option>25
+</option><option>26
+</option><option>27
+</option><option>28
+</option><option>29
+</option><option>30
+</option><option>31
+</option></select>
+</td>
+<td><input type="submit" value="set" name="act"></td>
+<td width="5"></td>
+<td><input type="submit" value="now" name="act"></td>
+</tr>
+</tbody></table>
+</td></tr>
+</tbody></table>
+<img src="fig/goes_xr_3d.png" width="640" height="500">
+</form>
+定期的に自動更新します。<br>
+時刻は世界時です。日本時間は、世界時＋ 9時間 です。<br><br>
+赤・橙 = 0.1〜0.8 nm、青・紫 = 0.05〜0.4 nm ( W / m・m )。<br>
+<br>
+<a href="https://www.swpc.noaa.gov/">NOAA/SWPC</a>による<br>
+<a href="https://www.swpc.noaa.gov/products/goes-x-ray-flux">GOES衛星のX線</a>リアルタイムデータを用いて、<br>
+宇宙天気ニュースで作図しています。<br>
+<br>
+X線の増加がC3.0以上のフレアを検出・表示します。<br>
+ただし、表示は規模の大きいフレアから10個までです。<br>
+ソフトウェアによる自動検出ですので、<br>
+数値の誤差や検出ミスもあります。<br>
+<br>
+正確な情報は、以下のページにて確認をお願いします。<br>
+<a href="https://www.swpc.noaa.gov/products/solar-and-geophysical-event-reports">NOAA, Solar and Geophysical Event Reports</a><br>
+過去の記録は→　<a href="ftp://ftp.swpc.noaa.gov/pub/indices/events/">ftp://ftp.swpc.noaa.gov/pub/indices/events/</a><br>
+ 
+<br><br>
+<hr>
+<table cellspacing="0" cellpadding="0">
+<tbody><tr>
+<td valign="middle">
+<a href="http://www.kagoshima-ct.ac.jp"><img align="right" border="0" src="../fig/logo_kct_32.png"></a>
+</td>
+<td>
+&nbsp;&nbsp;宇宙天気ニュースは、<br>&nbsp;&nbsp;<a href="http://www.kagoshima-ct.ac.jp">鹿児島工業高等専門学校</a>にWebサーバーを設置しています。
+</td>
+</tr>
+</tbody></table>
+<hr>
+このニュースについて、コメントなどがありましたら、<br>
+篠原 学( shino@kagoshima-ct.ac.jp )宛てお知らせ下さい。<br>
+<br><br><br>
+</body></html>
