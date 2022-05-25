@@ -7,4 +7,4 @@ https://tinnguruma.github.io/taion
 [test]
 https://tinnguruma.github.io/taion/test
 [test1]
-https://tinnguruma.github.io/taion/test1
+https://tinnguruma.github.io/taion/test2
