@@ -9,7 +9,7 @@ https://tinnguruma.github.io/taion/collectively/4
 https://tinnguruma.github.io/taion/collectively/5
 
 # [単送信]
-https://tinnguruma.github.io/taio
+https://tinnguruma.github.io/taion
 
 # [test]
 https://tinnguruma.github.io/taion/test
