@@ -14,7 +14,7 @@ https://tinnguruma.github.io/taio
 # [test]
 https://tinnguruma.github.io/taion/test
 
-# [test1]
+# [test2]
 https://tinnguruma.github.io/taion/test2
 
 
