@@ -8,6 +8,9 @@ https://tinnguruma.github.io/taion/collectively/4
 5月
 https://tinnguruma.github.io/taion/collectively/5
 
+6月
+https://tinnguruma.github.io/taion/collectively/6
+
 # [単送信]
 https://tinnguruma.github.io/taion
 
