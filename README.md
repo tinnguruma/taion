@@ -1,5 +1,10 @@
 # taion
-Demo
+Demo  
+
+# 完全自動
+https://tinnguruma.github.io/taion/Fully-Automatic-Temperature-Input/  
+
+
 
 # [一ヶ月分]
 4月
