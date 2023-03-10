@@ -1,0 +1,156 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>体温送信</title>
+    <link rel="stylesheet" media="screen" href="css/style.css" />
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // HTMLの読み込みが完了した後に実行したい処理をここに記述する
+            var u_num = localStorage.getItem("number");
+            var u_nam = localStorage.getItem("name");
+
+            if (!u_num || !u_nam) {
+                window.location.href = "index.html";
+            } else {
+                document.getElementById("conf_number").innerHTML = "番号：" + u_num;
+                document.getElementById("conf_name").innerHTML = "名前：" + u_nam;
+            }
+        });
+
+        function BT_385() {
+            BTSend("38.5以上");
+        }
+
+        function BT_360() {
+            BTSend("36.0以下");
+        }
+
+
+        function BTSend(temp) {
+
+            var u_num = localStorage.getItem("number");
+            var u_nam = localStorage.getItem("name");
+
+            var mixedData = new FormData();
+
+            if (!u_num || !u_nam || !temp) {
+                window.location.href = "index.html";
+            }
+
+            // appendメソッドでキーとデータの組をセットする
+            mixedData.append("entry.1059688083", u_num);
+            mixedData.append("entry.940536584", u_nam);
+            mixedData.append("entry.434616886", "本日");
+            mixedData.append("entry.1231816848", temp);
+            mixedData.append("entry.56129156", "〇 良好");
+            mixedData.append("entry.1317374399", "〇 良好");
+
+            // XHRの宣言
+            var XHR = new XMLHttpRequest();
+
+            // openメソッドにPOSTを指定して送信先のURLを指定します
+            XHR.open("POST", "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfJoOdGHJVkGj8gNqINExzEHJ7vJ8ITx8YHtKGzKDD-iQyWDw/formResponse", true);
+
+
+            XHR.onreadystatechange = function() {
+                if (XHR.readyState === 4) {
+                    if (XHR.status >= 200 && XHR.status < 300) {
+                        console.log(XHR.responseText);
+                    } else if (XHR.status === 0 && XHR.readyState === 4) {
+                        //statusが0で(Cross_error、未送信か)、かつreadyStateが4で送信完了
+                        //多分ここが正しい処理
+                        console.error('クロスオリジンリクエストが失敗しました。');
+                        console.log(XHR);
+                        document.getElementById("data_response").innerHTML = "正常にクロスオリジンリクエストが失敗しました。(?)";
+                        alert("(登録情報が間違ってなければ)たぶん送信完了\n(閉じるとか完了とか押して処理を完了させてください。)");
+                    } else {
+                        alert('おそらく送信失敗。登録情報の見直しをしてくれ。Error message: XHR.status did not reach 0...does that mean it was sent but failed...400? I am not sure, but there might be a problem with what you are sending.');
+                    }
+                } else {
+                    alert("おそらく失敗かな...?  Error message: XHR.readyState did not reach 4! Oh my god! I don't know what to do! That means I don't know how to fix it! I guess I'm done! Bye!")
+                }
+            };
+
+
+            // sendメソッドにデータを渡して送信を実行する
+            XHR.send(mixedData);
+
+
+
+        }
+
+        function back_info() {
+            window.location.href = "index.html";
+        }
+    </script>
+</head>
+
+<body>
+    <h1 class="site-title">さぁ送信しよう！</h1>
+    <p>
+        <div id="conf_number">
+        </div>
+        <div id="conf_name">
+        </div>
+    </p>
+
+    <!-- <button class="large-button" onclick="BT_365()">Big button</button> -->
+
+
+    <div class="button-container">
+        <button class="button-1" onclick="BT_360()">36.0以下</button>
+        <button class="button-1" onclick="BTSend(36.1)">36.1</button>
+        <button class="button-1" onclick="BTSend(36.2)">36.2</button>
+        <button class="button-1" onclick="BTSend(36.3)">36.3</button>
+        <button class="button-1" onclick="BTSend(36.4)">36.4</button>
+    </div>
+
+    <div class="button-container ">
+        <button class="button-2" onclick="BTSend(36.5)">36.5</button>
+        <button class="button-2" onclick="BTSend(36.6)">36.6</button>
+        <button class="button-2" onclick="BTSend(36.7)">36.7</button>
+        <button class="button-2" onclick="BTSend(36.8)">36.8</button>
+        <button class="button-2" onclick="BTSend(36.9)">36.9</button>
+    </div>
+
+    <div class="button-container" id="button2">
+        <button class="button-3" onclick="BTSend(37.0)">37.0</button>
+        <button class="button-3" onclick="BTSend(37.1)">37.1</button>
+        <button class="button-3" onclick="BTSend(37.2)">37.2</button>
+        <button class="button-3" onclick="BTSend(37.3)">37.3</button>
+        <button class="button-3" onclick="BTSend(37.4)">37.4</button>
+    </div>
+
+    <div class="button-container" id="button3">
+        <button class="button-4" onclick="BTSend(37.5)">37.5</button>
+        <button class="button-4" onclick="BTSend(37.6)">37.6</button>
+        <button class="button-4" onclick="BTSend(37.7)">37.7</button>
+        <button class="button-4" onclick="BTSend(37.8)">37.8</button>
+        <button class="button-4" onclick="BTSend(37.9)">37.9</button>
+    </div>
+
+    <div class="button-container" id="button4">
+        <button class="button-5" onclick="BTSend(38.0)">38.0</button>
+        <button class="button-5" onclick="BTSend(38.1)">38.1</button>
+        <button class="button-5" onclick="BTSend(38.2)">38.2</button>
+        <button class="button-5" onclick="BTSend(38.3)">38.3</button>
+        <button class="button-5" onclick="BTSend(38.4)">38.4</button>
+    </div>
+
+    <button class="max_value" onclick="BT_385()">38.5以上</button>
+
+
+
+    <!-- <div id="text-button " onclick="clickDisplayAlert() ">Click</div> -->
+    <p id="data_response">
+    </p>
+
+    <br>
+    <p style="font-size: 30px;">このページをブックマークしてください。<br>(情報が登録されていなかったら登録画面に自動で遷移します)</p>
+
+    <p><button class="text-button" onclick="back_info()">登録情報変更</button></p>
+
+</body>
+
+</html>

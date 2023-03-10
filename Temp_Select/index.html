@@ -1,0 +1,77 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" media="screen" href="css/style.css" />
+    <title>情報入力</title>
+    <!-- <link rel="stylesheet" media="screen" href="css/style.css" /> -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // HTMLの読み込みが完了した後に実行したい処理をここに記述する
+            var u_num = localStorage.getItem("number");
+            var u_nam = localStorage.getItem("name");
+
+            document.getElementById("conf_number").innerHTML = "番号：" + u_num;
+            document.getElementById("conf_name").innerHTML = "名前：" + u_nam;
+
+        });
+
+        function clickSubmit() {
+            //alert("ボタンがクリックされました！");
+            var num_e = document.getElementById("number");
+            var nam_e = document.getElementById("name");
+            var num = num_e.value;
+            var nam = nam_e.value;
+            localStorage.setItem('number', num);
+            localStorage.setItem('name', nam);
+            document.getElementById("conf_number").innerHTML = "番号：" + num;
+            document.getElementById("conf_name").innerHTML = "名前：" + nam;
+        }
+
+        function DestroyData() {
+            localStorage.removeItem('number');
+            localStorage.removeItem('name');
+            document.getElementById("conf_number").innerHTML = "番号：";
+            document.getElementById("conf_name").innerHTML = "名前：";
+        }
+
+        function move_site() {
+            window.location.href = "send.html";
+        }
+    </script>
+</head>
+
+<body>
+    <h1 class="site-title">情報入力</h1>
+    <p>番号：<input class="input" type="number" id="number"></p>
+    <p>名前：<input class="input" type="text" id="name"></p>
+
+    <p><button class="text-button" onclick="clickSubmit()">情報登録</button></p>
+
+    <p><button class="move_site" onclick="move_site()"><<<[体温入力所]>>></button></p>
+
+    <p>
+        ------登録情報------
+        <div id="conf_number">
+        </div>
+        <div id="conf_name">
+        </div>
+        ------------------------
+    </p>
+
+
+    <p><button class="text-button" onclick="DestroyData()">情報消去</button></p>
+    <br>
+
+    <p>登録っても情報はあなたの端末に保存されます。<br>サーバ上に保存されることはありません<br>再起動とかしない限り結構残ります<br></p>
+
+
+
+
+
+
+
+    <!-- <div id="text-button" onclick="clickDisplayAlert()">Click</div> -->
+</body>
+
+</html>
